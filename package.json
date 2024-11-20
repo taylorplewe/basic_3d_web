@@ -1,7 +1,15 @@
 {
-  "name": "examples",
-  "packageManager": "yarn@3.2.3",
+  "name": "basic_3d_web",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
   "devDependencies": {
-    "parcel": "^2.7.0"
+    "typescript": "~5.6.2",
+    "vite": "^5.4.10"
   }
 }
