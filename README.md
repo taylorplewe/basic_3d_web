@@ -1,28 +1,21 @@
+(forked from [carltheperson/3d-to-2d-example](https://github.com/carltheperson/3d-to-2d-example) and converted from yarn project to vite)
+
 # 3D to 2D Example
 
 [**Watch the YouTube video for this project**](https://www.youtube.com/watch?v=eoXn6nwV694)
 
 ![](./image.png)
 
-# Running
-
-### 1. Clone this project
-
-### 2. Install [yarn](https://yarnpkg.com/)
-
-### 3. Install dependencies
+# Cloning & Running
 
 ```
-yarn install
+git clone https://github.com/taylorplewe/basic_3d_web.git
+cd basic_3d_web
+npm i
+npm run dev
 ```
 
-### 4. Run code
-
-```
-yarn parcel index.html
-```
-
-### 5. Go to [http://localhost:1234](http://localhost:1234)
+### 5. Go to [http://localhost:5173](http://localhost:5173)
 
 # License
 
