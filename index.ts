@@ -31,9 +31,10 @@ const FACES = [
 
 const WIDTH = 1000;
 const HEIGHT = 1000;
-const CUBE_DISTANCE = 10;
-const FOV_ANGLE = 45;
+const CUBE_DISTANCE = 2;
 const LINE_WIDTH = 3;
+
+let fovAngle = 100;
 
 const c = document.createElement("canvas");
 c.width = WIDTH;
@@ -43,7 +44,7 @@ ctx.lineWidth = LINE_WIDTH;
 document.body.append(c);
 
 function transform2DTo3D(xy: number, z: number) {
-  const angleRadians = (FOV_ANGLE / 180) * Math.PI;
+  const angleRadians = (fovAngle / 180) * Math.PI;
   return xy / (z * Math.tan(angleRadians / 2));
 }
 
@@ -72,7 +73,25 @@ function draw(mouseX: number, mouseY: number) {
   }
 }
 
-c.addEventListener("mousemove", (event) => draw(event.offsetX, event.offsetY));
+let offsetX = 0;
+let offsetY = 0;
+window.addEventListener('keydown', ({ key }) => {
+	switch (key) {
+		case 'ArrowUp':
+			fovAngle++;
+			draw(offsetX, offsetY);
+			break;
+		case 'ArrowDown':
+			fovAngle--;
+			draw(offsetX, offsetY);
+			break;
+	}
+});
+c.addEventListener('mousemove', e => {
+	offsetX = e.offsetX;
+	offsetY = e.offsetY;
+	draw(offsetX, offsetY);
+});
 draw(0, 0);
 
 function drawPolygon(
